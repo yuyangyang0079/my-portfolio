@@ -1,0 +1,32 @@
+/* General styles for sections */
+section {
+  padding: 60px 0; /* Add vertical padding for better spacing */
+}
+
+#about {
+  background-color: #f8f9fa; /* Light gray background for About section */
+}
+
+#projects {
+  background-color: #ffffff; /* White background for Projects section */
+}
+
+#contact {
+  background-color: #f8f9fa; /* Light gray background for Contact section */
+}
+
+/* Align text in the center for headings */
+section h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Add spacing for form inputs in the Contact section */
+#contact form .form-control {
+  margin-bottom: 20px;
+}
+
+/* Fix card layout for Projects */
+.card {
+  margin: 15px 0; /* Add spacing between project cards */
+}
