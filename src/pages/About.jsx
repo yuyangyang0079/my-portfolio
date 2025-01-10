@@ -1,4 +1,3 @@
-import React from 'react';
 
 const About = () => {
   return (
@@ -7,13 +6,17 @@ const About = () => {
       <div className="row">
         {/* Left Column: Profile Picture */}
         <div className="col-md-4 text-center">
-          <img
-            src="https://via.placeholder.com/200" // Replace with your actual image
+          <img height={200} width={200}
+            src="/Avatar.svg" 
             alt="Profile"
             className="img-fluid rounded-circle mb-3"
           />
-          <h4>John Doe</h4>
-          <p className="text-muted">Web Developer</p>
+          <h4>Yangyang Yu</h4>
+          <p className="text-muted ">Web Developer</p>
+          <a target="_blank" type="button" className="btn btn-light bg-transparent" href="https://drive.google.com/file/d/1h9nXje-QyBrEMvXZrJ9kih8gqiVsUUR0/view?usp=sharing">
+          <button type='button' className="btn btn-link" >Resume <i className="bi bi-cloud-arrow-down"></i></button>
+          </a>
+          
         </div>
         
         {/* Right Column: Description */}

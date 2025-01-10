@@ -1,10 +1,9 @@
-import React from 'react';
 
 const Projects = () => {
   return (
     <div className="projects">
       <h2>My Projects</h2>
-      <div className="project-grid">
+      <div className="project-grid container py-5">
         <div className="project-card">
           <h3>Project 1</h3>
           <p>Description of Project 1</p>
