@@ -1,32 +1,243 @@
-/* General styles for sections */
+/* Apply Global Font */
+body {
+  font-family: 'Montserrat', sans-serif;
+  line-height: 3.6;
+}
+
+/* General Section Styles */
 section {
-  padding: 60px 0; /* Add vertical padding for better spacing */
+  padding: 60px 0;
 }
 
 #about {
-  background-color: #f8f9fa; /* Light gray background for About section */
+  background-color: #edf6f9; /* Light blue from the palette */
+  border-radius: 2%;
 }
 
 #projects {
-  background-color: #ffffff; /* White background for Projects section */
+  background-color: #ffffff; /* White for Projects section */
 }
 
 #contact {
-  background-color: #f8f9fa; /* Light gray background for Contact section */
+  background-color: #f1f5f9; /* Slightly darker neutral tone */
 }
 
-/* Align text in the center for headings */
 section h2 {
   text-align: center;
   margin-bottom: 30px;
+  color: #023047; /* Deep blue for headings */
+  font-weight: 600;
 }
 
-/* Add spacing for form inputs in the Contact section */
-#contact form .form-control {
+/* Home Page */
+.home {
+  margin-top: 100px;
+}
+
+/* Footer Styles */
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #023047; /* Deep blue */
+  padding: 10px 0;
+  text-align: center;
+  color: #ffffff;
+  box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+  margin: 0;
+  font-size: 14px;
+}
+
+/* Projects Section */
+.projects {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.projects h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #023047;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  justify-items: center;
+}
+
+.project-card {
+  background-color: #ffffff;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.project-card h3 {
+  font-size: 1.75rem;
+  color: #219ebc; /* Soft blue for titles */
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.project-card p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 10px;
+  font-weight: 400;
+}
+
+.project-card ul {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 10px;
+}
+
+.project-card ul li {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+.project-card a {
+  font-size: 1.1rem;
+  color: #219ebc;
+  text-decoration: none;
+  border-bottom: 2px solid #219ebc;
+  transition: color 0.3s ease, border-bottom-color 0.3s ease;
+}
+
+.project-card a:hover {
+  color: #0056b3;
+  border-bottom-color: #0056b3;
+}
+
+/* Contact Section */
+.contact {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #f8f9fa; /* Light gray */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Ensures the form stays centered */
+}
+
+/* Heading Styles */
+.contact h1 {
+  text-align: center;
   margin-bottom: 20px;
+  font-size: 2rem;
+  color: #023047;
+  font-weight: 600;
 }
 
-/* Fix card layout for Projects */
-.card {
-  margin: 15px 0; /* Add spacing between project cards */
+/* Form Container */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%; /* Makes the form take full width of its container */
+}
+
+.form-group label {
+  font-size: 1rem;
+  margin-bottom: 5px;
+  color: #333;
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 8px;
+  font-size: 0.95rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #219ebc;
+  outline: none;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* Error message styling */
+.error {
+  color: red;
+  font-size: 0.875rem;
+  margin-top: 5px;
+}
+
+/* Responsive Adjustments for Smaller Screens */
+@media (max-width: 768px) {
+  .contact {
+    max-width: 90%; /* Allow the form to take up more space on smaller screens */
+    margin: 20px auto;
+    padding: 15px;
+  }
+}
+
+/* Button Styling */
+button {
+  padding: 10px;
+  font-size: 1rem;
+  background-color: #219ebc;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Status Message Styling */
+.status-message {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.status-message.success {
+  color: green;
+}
+
+.status-message.error {
+  color: red;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .projects {
+    padding: 30px 15px;
+  }
+
+  .projects h2 {
+    font-size: 2rem;
+  }
+
+  .project-card {
+    padding: 15px;
+  }
 }

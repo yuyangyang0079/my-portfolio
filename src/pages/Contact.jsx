@@ -14,6 +14,8 @@ const Contact = () => {
     message: '',
   });
 
+  const [status, setStatus] = useState('');
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -54,14 +56,14 @@ const Contact = () => {
         const response = await axios.post('http://localhost:3001/api/send', formData);
 
         if (response.status === 200) {
-          alert('Message sent successfully!');
+          setStatus('Message sent successfully!');
           setFormData({ name: '', email: '', message: '' }); // Clear form after submit
         } else {
-          alert('Failed to send message. Please try again.');
+          setStatus('Failed to send message. Please try again.');
         }
       } catch (error) {
         console.error('Error sending message:', error);
-        alert('An error occurred while sending the message.');
+        setStatus('An error occurred while sending the message.');
       }
     }
   };
@@ -69,8 +71,8 @@ const Contact = () => {
   return (
     <div className="contact">
       <h1>Contact Me</h1>
-      <form onSubmit={handleSubmit}>
-        <div>
+      <form onSubmit={handleSubmit} className="contact-form">
+        <div className="form-group">
           <label htmlFor="name">Name</label>
           <input
             type="text"
@@ -78,11 +80,13 @@ const Contact = () => {
             name="name"
             value={formData.name}
             onChange={handleChange}
+            className="form-control"
+            required
           />
           {errors.name && <span className="error">{errors.name}</span>}
         </div>
 
-        <div>
+        <div className="form-group">
           <label htmlFor="email">Email</label>
           <input
             type="email"
@@ -90,23 +94,29 @@ const Contact = () => {
             name="email"
             value={formData.email}
             onChange={handleChange}
+            className="form-control"
+            required
           />
           {errors.email && <span className="error">{errors.email}</span>}
         </div>
 
-        <div>
+        <div className="form-group">
           <label htmlFor="message">Message</label>
           <textarea
             id="message"
             name="message"
             value={formData.message}
             onChange={handleChange}
+            className="form-control"
+            required
           />
           {errors.message && <span className="error">{errors.message}</span>}
         </div>
 
-        <button type="submit">Submit</button>
+        <button type="submit" className="btn btn-primary">Submit</button>
       </form>
+
+      {status && <div className="status-message">{status}</div>}
     </div>
   );
 };
